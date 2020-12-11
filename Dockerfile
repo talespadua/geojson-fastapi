@@ -1,17 +1,21 @@
-FROM python:3.8.5-alpine3.12 AS base
-WORKDIR /app/
+# Pull base image
+FROM python:3.8
 
-# Add docker-compose-wait tool -------------------
-ENV WAIT_VERSION 2.7.2
-ADD https://github.com/ufoscout/docker-compose-wait/releases/download/$WAIT_VERSION/wait /wait
-RUN chmod +x /wait
+# Set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+ENV PYTHONPATH=.
 
-COPY poetry.lock pyproject.toml ./
-RUN apk add --no-cache mariadb-connector-c-dev && \
-    apk add --no-cache --virtual .build-deps mariadb-dev gcc python3-dev musl-dev libffi-dev openssl-dev make && \
-    pip install poetry && \
-    poetry config virtualenvs.create false && \
-    poetry install --no-interaction --no-root && \
-    pip uninstall poetry -y && \
-    apk del .build-deps
-COPY . .
+# Set work directory
+WORKDIR /code
+
+# Install dependencies manager
+RUN pip install poetry && \
+    poetry config virtualenvs.create false
+
+# Copy dependencies and install them
+COPY poetry.lock pyproject.toml Makefile /code/
+RUN poetry install --no-interaction --no-root
+
+# Copy source code
+COPY project /code/project

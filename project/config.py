@@ -10,7 +10,7 @@ settings = Dynaconf(
         Validator("ENVIRONMENT", is_type_of=str, default="production"),
         Validator("HOSTNAME", is_type_of=str, default=""),
         Validator("ACCESS_LOG", is_type_of=bool, default=False),
-        Validator("PORT", is_type_of=int, default=5000),
+        Validator("PORT", is_type_of=int, default=8080),
         Validator("HOST", is_type_of=str, default="0.0.0.0"),
         Validator("LOGGING_LEVEL", is_type_of=str, default="INFO"),
     ],
