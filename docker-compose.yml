@@ -6,22 +6,16 @@ services:
     container_name: project_app
     command: python /app/project/api/main.py
     environment:
-      - WAIT_HOSTS=project_mysql:3306
-      - DB_HOST=project_mysql
-      - DB_CONNECTION_STRING=mongodb://root:password@127.0.0.1:27017/project_db
-      - PYTHONPATH=.
+      - DB_CONNECTION_STRING=mongodb://root:password@db:27017/admin?retryWrites=true&w=majority
+      - DB_NAME=project_db
       - ENVIRONMENT=dev
-      - SECRET_KEY=e9e9cb2717a5622d690aa661909de0f84986e3a2148dd828fab08d5b51d13a4d
-      - ALGORITHM=HS256
-      - ACCESS_TOKEN_EXPIRE_MINUTES=1440
     volumes:
-      - ./migration:/app/migration
       - ./project:/app/project
       - ./test:/app/test
+      - ./mypy.ini:/app/mypy.ini
       - ./pyproject.toml:/app/pyproject.toml
       - ./poetry.lock:/app/poetry.lock
       - ./Makefile:/app/Makefile
-      - ./mypy.ini:/app/mypy.ini
       - ./coverage-reports:/code/coverage-reports
     ports:
       - "8080:8080"
@@ -31,7 +25,6 @@ services:
     image: mongo
     container_name: project_mongo
     environment:
-      - MONGO_INITDB_DATABASE=project_db
       - MONGO_INITDB_ROOT_USERNAME=root
       - MONGO_INITDB_ROOT_PASSWORD=password
     ports:

@@ -1,25 +1,18 @@
 import uvicorn
 from fastapi import FastAPI
-from motor.motor_asyncio import AsyncIOMotorClient
+
 from project.config import settings
+from project.api.routes import partner_routes
 
 app = FastAPI()
 
 
-@app.on_event("startup")
-async def startup_db_client():
-    app.mongodb_client = AsyncIOMotorClient(settings.DB_CONNECTION_STRING)
-
-
-@app.on_event("shutdown")
-async def shutdown_db_client():
-    app.mongodb_client.close()
-
-
 @app.get("/health_check/")
-def health_check():
+def health_check() -> str:
     return "ok"
 
+
+app.include_router(partner_routes.router)
 
 if __name__ == "__main__":
     uvicorn.run(

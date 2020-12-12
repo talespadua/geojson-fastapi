@@ -3,7 +3,7 @@ DOCKER_COMP_EXEC_CMD=docker-compose exec -T $(BUILD_IMAGE_NAME)
 
 env/raise:
 	$(info Raising Infrastructure)
-	docker-compose up -d
+	docker-compose up -d --build
 
 env/shutdown:
 	$(info Shutting down Infrastructure)

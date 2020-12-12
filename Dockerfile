@@ -14,7 +14,7 @@ RUN pip install poetry && \
     poetry config virtualenvs.create false
 
 # Copy dependencies and install them
-COPY poetry.lock pyproject.toml Makefile /code/
+COPY poetry.lock pyproject.toml Makefile mypy.ini /code/
 RUN poetry install --no-interaction --no-root
 
 # Copy source code
