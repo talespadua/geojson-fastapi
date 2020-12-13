@@ -31,10 +31,7 @@ class PartnerRepository(BasePartnerRepository):
             {
                 "coverageArea": {
                     "$geoIntersects": {
-                        "$geometry": {
-                            "type": "Point",
-                            "coordinates": [long, lat]
-                        }
+                        "$geometry": {"type": "Point", "coordinates": [long, lat]}
                     }
                 }
             }

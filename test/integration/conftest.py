@@ -8,7 +8,7 @@ from project.dal import mongo_connection
 
 @pytest.fixture(scope="class", autouse=True)
 def db_connection() -> Any:
-    mongo_connection.database.partners.remove({})
+    mongo_connection.database.partners.drop()
     mongo_connection.database["partners"].create_index([("document", 1)], unique=True)
     mongo_connection.database.partners.create_index([("address", GEOSPHERE)])
     mongo_connection.database.partners.create_index([("coverageArea", GEOSPHERE)])

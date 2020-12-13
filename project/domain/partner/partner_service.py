@@ -1,5 +1,5 @@
 from project.libs.geometry import euclidean_distance
-from typing import Optional, Any, List, Tuple
+from typing import Optional, List, Tuple
 
 from project.domain.partner.base_partner_repository import BasePartnerRepository
 from project.domain.partner.model import PartnerModel
