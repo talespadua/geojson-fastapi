@@ -19,3 +19,5 @@ RUN poetry install --no-interaction --no-root
 
 # Copy source code
 COPY project /code/project
+COPY scripts /code/scripts
+COPY test /code/test

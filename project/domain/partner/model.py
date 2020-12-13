@@ -23,7 +23,7 @@ class PartnerModel(BaseModel):
     trading_name: str = Field(alias="tradingName")
     owner_name: str = Field(alias="ownerName")
     document: str
-    coverageArea: MultiPolygon
+    coverage_area: MultiPolygon = Field(alias="coverageArea")
     address: Point
 
     class Config:

@@ -11,6 +11,7 @@ services:
       - ENVIRONMENT=dev
     volumes:
       - ./project:/app/project
+      - ./scripts:/app/scripts
       - ./test:/app/test
       - ./mypy.ini:/app/mypy.ini
       - ./pyproject.toml:/app/pyproject.toml

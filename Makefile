@@ -9,6 +9,14 @@ env/shutdown:
 	$(info Shutting down Infrastructure)
 	docker-compose down
 
+env/db/seed:
+	$(info seeding database)
+	$(DOCKER_COMP_EXEC_CMD) python scripts/seed_db.py
+
+env/db/drop:
+	$(info dropping db)
+	$(DOCKER_COMP_EXEC_CMD) python scripts/drop_db.py
+
 test:
 	$(DOCKER_COMP_EXEC_CMD) python -m pytest test/
 
