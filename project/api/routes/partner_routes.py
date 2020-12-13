@@ -14,15 +14,26 @@ partner_repository = PartnerRepository(mongo_connection)
 partner_service = PartnerService(partner_repository)
 
 
-@router.get("/search")
+@router.get(
+    "/search",
+    responses={
+        404: {"description": "No partner found"}
+    }
+)
 def get_nearest_partner(long: float, lat: float) -> Optional[PartnerModel]:
     nearest_partner = partner_service.get_nearest_partner_covering_point(long, lat)
     if not nearest_partner:
-        raise HTTPException(status_code=404, detail="No partner cover this area")
+        raise HTTPException(status_code=404, detail="No partner coverage in this area")
     return nearest_partner
 
 
-@router.get("/{partner_id}/", response_model=PartnerModel)
+@router.get(
+    "/{partner_id}/",
+    response_model=PartnerModel,
+    responses={
+        404: {"description": "No partner found"}
+    }
+)
 def get_partner_by_id(partner_id: str) -> PartnerModel:
     partner = partner_service.get_partner_by_id(partner_id)
     if not partner:
@@ -35,7 +46,7 @@ def get_partner_by_id(partner_id: str) -> PartnerModel:
     status_code=201,
     responses={
         409: {
-            "description": "there is a partner with the provided document"
+            "description": "There is a partner with the provided document"
         }
     }
 )
