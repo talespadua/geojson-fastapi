@@ -192,17 +192,6 @@ optional = false
 python-versions = "*"
 
 [[package]]
-name = "motor"
-version = "2.3.0"
-description = "Non-blocking MongoDB driver for Tornado or asyncio"
-category = "main"
-optional = false
-python-versions = ">=3.5.2"
-
-[package.dependencies]
-pymongo = ">=3.11,<4"
-
-[[package]]
 name = "mypy"
 version = "0.790"
 description = "Optional static typing for Python"
@@ -444,7 +433,7 @@ standard = ["websockets (>=8.0.0,<9.0.0)", "watchgod (>=0.6,<0.7)", "python-dote
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "7736c8223094246934c29e003abfaed03fa7c93011ff428badbecf7358d29b83"
+content-hash = "4d074b4a13f68a833f595dd1bbf9488c5305851a348b2abc0dc4fa66847ad8dd"
 
 [metadata.files]
 appdirs = [
@@ -540,10 +529,6 @@ iniconfig = [
 mccabe = [
     {file = "mccabe-0.6.1-py2.py3-none-any.whl", hash = "sha256:ab8a6258860da4b6677da4bd2fe5dc2c659cff31b3ee4f7f5d64e79735b80d42"},
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
-]
-motor = [
-    {file = "motor-2.3.0-py3-none-any.whl", hash = "sha256:428d94750123d19fcd0a89b8671ff9b4656f205217bad9f44161748c64c5fc80"},
-    {file = "motor-2.3.0.tar.gz", hash = "sha256:f1692b760d834707e3477996ce8d407af8cd61c1a2abedbf81c22ef14675e61a"},
 ]
 mypy = [
     {file = "mypy-0.790-cp35-cp35m-macosx_10_6_x86_64.whl", hash = "sha256:bd03b3cf666bff8d710d633d1c56ab7facbdc204d567715cb3b9f85c6e94f669"},

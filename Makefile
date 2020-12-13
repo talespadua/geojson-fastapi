@@ -18,7 +18,7 @@ env/db/drop:
 	$(DOCKER_COMP_EXEC_CMD) python scripts/drop_db.py
 
 test:
-	$(DOCKER_COMP_EXEC_CMD) python -m pytest test/
+	$(DOCKER_COMP_EXEC_CMD) python -m pytest --cov=project test/
 
 mypy:
 	$(DOCKER_COMP_EXEC_CMD) python -m mypy .
