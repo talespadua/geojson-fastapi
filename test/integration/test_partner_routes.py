@@ -5,14 +5,13 @@ from requests.models import Response
 from fastapi.testclient import TestClient
 
 from project.api.main import app
-from project.domain.partner.model import PartnerModel
 
 client = TestClient(app)
 
 
 class TestPartnerRoutes:
     @pytest.fixture()
-    def partner_id(self, partner: PartnerModel) -> str:
+    def partner_id(self) -> str:
         return "5fd53ee325a51f5b8631730a"
 
     @pytest.fixture()
@@ -70,7 +69,7 @@ class TestPartnerRoutes:
         class TestWhenSearchingForNearPartnerCoveringLocation:
             @pytest.fixture()
             def location(self) -> Tuple[float, float]:
-                return 29.311523, 24.006326
+                return -44.014835357666016, -19.90638004921044
 
             def test_should_return_partner(
                 self,
@@ -79,36 +78,3 @@ class TestPartnerRoutes:
             ) -> None:
                 assert insert_partner_response.status_code == 201
                 assert search_partner_response.status_code == 200
-
-
-# class TestThereIsOverlappingAreas:
-#     def test_there_is_overlapping_areas(self) -> None:
-#         from scripts.seed_db import seed_db
-#         from project.dal import mongo_connection
-#         from project.dal.partner_repository import PartnerRepository
-#
-#         repository = PartnerRepository(mongo_connection)
-#
-#         seed_db()
-#         max_found = 0
-#         coordinates = []
-#         partners = mongo_connection.database.partners.find({})
-#         dal = PartnerRepository(mongo_connection)
-#
-#         for p in partners:
-#
-#             near_partners = repository.get_partners_by_point_intersection(
-#                 long=p["address"]["coordinates"][0],
-#                 lat=p["address"]["coordinates"][1],
-#             )
-#
-#             number_of_partners = len(near_partners)
-#             if number_of_partners > max_found:
-#                 max_found = number_of_partners
-#                 parter_within = p
-#                 coordinates = [
-#                     p["address"]["coordinates"][0],
-#                     p["address"]["coordinates"][1],
-#                 ]
-#
-#         pass

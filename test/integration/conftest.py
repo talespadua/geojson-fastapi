@@ -1,58 +1,135 @@
 from typing import Any
 
 import pytest
-from geojson_pydantic.geometries import MultiPolygon, Point
+from pymongo import GEOSPHERE
 
 from project.dal import mongo_connection
-from project.domain.partner.model import PartnerModel
 
 
 @pytest.fixture(scope="class", autouse=True)
 def db_connection() -> Any:
-    mongo_connection.database.partners.drop()
+    mongo_connection.database.partners.remove({})
+    mongo_connection.database["partners"].create_index([("document", 1)], unique=True)
+    mongo_connection.database.partners.create_index([("address", GEOSPHERE)])
+    mongo_connection.database.partners.create_index([("coverageArea", GEOSPHERE)])
     yield
     mongo_connection.database.partners.drop()
 
 
 @pytest.fixture()
-def partner() -> PartnerModel:
-    return PartnerModel(
-        trading_name="Adega da Cerveja - Pinheiros",
-        owner_name="Zé da Silva",
-        document="1432132123891/0001",
-        address=Point(coordinates=(-46.57421, -21.785741)),
-        coverage_area=MultiPolygon(coordinates=[
-            [[(30, 20), (45, 40), (10, 40), (30, 20)]],
-            [[(15, 5), (40, 10), (10, 20), (5, 10), (15, 5)]],
-        ])
-    )
-    # return PartnerModel.parse_obj({
-    #     "tradingName": "Adega da Cerveja - Pinheiros",
-    #     "ownerName": "Zé da Silva",
-    #     "document": "1432132123891/0001",
-    #     "coverageArea": {
-    #         "type": "MultiPolygon",
-    #         "coordinates": [
-    #             [[[30, 20], [45, 40], [10, 40], [30, 20]]],
-    #             [[[15, 5], [40, 10], [10, 20], [5, 10], [15, 5]]],
-    #         ],
-    #     },
-    #     "address": {"type": "Point", "coordinates": [-46.57421, -21.785741]},
-    # })
-
-@pytest.fixture()
 def partner_json() -> str:
     return """
         {
-            "tradingName": "Adega da Cerveja - Pinheiros",
-            "ownerName": "Z\u00e9 da Silva",
-            "document": "1432132123891/0001",
-            "coverageArea": {
-                "coordinates": [
-                    [[[30.0, 20.0], [45.0, 40.0], [10.0, 40.0], [30.0, 20.0]]],
-                    [[[15.0, 5.0], [40.0, 10.0], [10.0, 20.0], [5.0, 10.0], [15.0, 5.0]]
-                ]],
-                "type": "MultiPolygon"
+            "trading_name":"Adega do Joao",
+            "owner_name":"Pele Maradona",
+            "document":"960361.506-44",
+            "coverage_area":{
+                "coordinates":[
+                    [
+                        [
+                            [
+                                -44.04912,
+                                -19.87743
+                            ],
+                            [
+                                -44.0493,
+                                -19.89438
+                            ],
+                            [
+                                -44.04758,
+                                -19.90212
+                            ],
+                            [
+                                -44.04346,
+                                -19.90922
+                            ],
+                            [
+                                -44.03385,
+                                -19.91923
+                            ],
+                            [
+                                -44.01891,
+                                -19.92165
+                            ],
+                            [
+                                -44.01647,
+                                -19.92306
+                            ],
+                            [
+                                -44.01436,
+                                -19.92319
+                            ],
+                            [
+                                -44.01175,
+                                -19.92427
+                            ],
+                            [
+                                -44.00724,
+                                -19.92585
+                            ],
+                            [
+                                -43.99909,
+                                -19.9185
+                            ],
+                            [
+                                -43.99432,
+                                -19.91403
+                            ],
+                            [
+                                -43.99557,
+                                -19.90842
+                            ],
+                            [
+                                -43.99582,
+                                -19.90285
+                            ],
+                            [
+                                -43.99436,
+                                -19.89002
+                            ],
+                            [
+                                -43.99316,
+                                -19.8792
+                            ],
+                            [
+                                -43.99436,
+                                -19.87371
+                            ],
+                            [
+                                -43.99951,
+                                -19.86532
+                            ],
+                            [
+                                -44.01917,
+                                -19.85135
+                            ],
+                            [
+                                -44.02801,
+                                -19.8545
+                            ],
+                            [
+                                -44.03745,
+                                -19.85668
+                            ],
+                            [
+                                -44.04397,
+                                -19.8608
+                            ],
+                            [
+                                -44.04912,
+                                -19.87743
+                            ]
+                            ]
+                        ]
+                    ],
+                "type":"MultiPolygon"
             },
-            "address": {"coordinates": [-46.57421, -21.785741], "type": "Point"}}
+            "address":{
+            "coordinates":[
+                -44.012478,
+                -19.887215
+            ],
+                "type":"Point"
+            }
+        }
     """

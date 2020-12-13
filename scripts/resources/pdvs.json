@@ -1,7 +1,6 @@
 {
     "pdvs": [
        {
-          "id": "1",
           "tradingName": "Adega Osasco",
           "ownerName": "Ze da Ambev",
           "document": "02.453.716/000170",
@@ -135,7 +134,6 @@
           }
        },
        {
-          "id": "2",
           "tradingName": "Adega Pinheiros",
           "ownerName": "Ze da Silva",
           "document": "04.433.714/0001-44",
@@ -285,7 +283,6 @@
           }
        },
        {
-          "id": "3",
           "tradingName": "Adega Sao Paulo",
           "ownerName": "Pedro Silva",
           "document": "04666182390",
@@ -431,7 +428,6 @@
           }
        },
        {
-          "id": "4",
           "tradingName": "Bar do Ze",
           "ownerName": "Joao Silva",
           "document": "04698149428",
@@ -569,7 +565,6 @@
           }
        },
        {
-          "id": "5",
           "tradingName": "Bar Legal",
           "ownerName": "Fernando Silva",
           "document": "05202839000126",
@@ -635,7 +630,6 @@
           }
        },
        {
-          "id": "7",
           "tradingName": "Mercado Pinheiros",
           "ownerName": "Luiz Santo",
           "document": "06004905000116",
@@ -737,7 +731,6 @@
           }
        },
        {
-          "id": "9",
           "tradingName": "Ze da Ambev",
           "ownerName": "Ze Legal",
           "document": "07.710.066/0001-14",
@@ -927,7 +920,6 @@
           }
        },
        {
-          "id": "10",
           "tradingName": "Emporio legal",
           "ownerName": "Leonardo Cruz",
           "document": "081.914.699-44",
@@ -1053,7 +1045,6 @@
           }
        },
        {
-          "id": "11",
           "tradingName": "Emporio Pinheiros",
           "ownerName": "Rai da Silva",
           "document": "09.201.319/0001-50",
@@ -1127,7 +1118,6 @@
           }
        },
        {
-          "id": "12",
           "tradingName": "Adega Emporio",
           "ownerName": "Ronaldinho gaucho",
           "document": "09.444.848/0001-84",
@@ -1229,7 +1219,6 @@
           }
        },
        {
-          "id": "13",
           "tradingName": "Adega do Joao",
           "ownerName": "Messi Pele",
           "document": "10.144.318/0001-08",
@@ -1375,7 +1364,6 @@
           }
        },
        {
-          "id": "14",
           "tradingName": "Joao do Emporio",
           "ownerName": "Pele Maradona",
           "document": "10.899.700/0001-13",
@@ -1489,7 +1477,6 @@
           }
        },
        {
-          "id": "15",
           "tradingName": "Emporio da Cerveja",
           "ownerName": "Joao Maradona",
           "document": "11.863.940/0001-20",
@@ -1607,7 +1594,6 @@
           }
        },
        {
-          "id": "16",
           "tradingName": "Ze Delivery",
           "ownerName": "Pele da Silva",
           "document": "13.082.397/000150",
@@ -1697,137 +1683,6 @@
           }
        },
        {
-          "id": "17",
-          "tradingName": "Behoppy",
-          "ownerName": "Daniboy",
-          "document": "13210.058/0001-01",
-          "coverageArea": {
-             "type": "MultiPolygon",
-             "coordinates": [
-                [
-                   [
-                      [
-                         -43.96607,
-                         -19.9764
-                      ],
-                      [
-                         -43.96572,
-                         -19.98149
-                      ],
-                      [
-                         -43.96752,
-                         -19.98713
-                      ],
-                      [
-                         -43.98024,
-                         -20.00461
-                      ],
-                      [
-                         -43.96704,
-                         -20.00256
-                      ],
-                      [
-                         -43.9534,
-                         -19.99785
-                      ],
-                      [
-                         -43.94467,
-                         -20.00632
-                      ],
-                      [
-                         -43.9306,
-                         -20.00083
-                      ],
-                      [
-                         -43.92979,
-                         -19.99845
-                      ],
-                      [
-                         -43.92674,
-                         -19.99575
-                      ],
-                      [
-                         -43.91798,
-                         -19.99011
-                      ],
-                      [
-                         -43.91953,
-                         -19.98236
-                      ],
-                      [
-                         -43.92553,
-                         -19.96623
-                      ],
-                      [
-                         -43.93017,
-                         -19.9609
-                      ],
-                      [
-                         -43.93841,
-                         -19.9601
-                      ],
-                      [
-                         -43.94785,
-                         -19.95768
-                      ],
-                      [
-                         -43.95042,
-                         -19.963
-                      ],
-                      [
-                         -43.95283,
-                         -19.96575
-                      ],
-                      [
-                         -43.95678,
-                         -19.96801
-                      ],
-                      [
-                         -43.95944,
-                         -19.96881
-                      ],
-                      [
-                         -43.96201,
-                         -19.97018
-                      ],
-                      [
-                         -43.96356,
-                         -19.9722
-                      ],
-                      [
-                         -43.96493,
-                         -19.97333
-                      ],
-                      [
-                         -43.96648,
-                         -19.97825
-                      ],
-                      [
-                         -43.96665,
-                         -19.97776
-                      ],
-                      [
-                         -43.96639,
-                         -19.97817
-                      ],
-                      [
-                         -43.96607,
-                         -19.9764
-                      ]
-                   ]
-                ]
-             ]
-          },
-          "address": {
-             "type": "Point",
-             "coordinates": [
-                -43.957893,
-                -19.957102
-             ]
-          }
-       },
-       {
-          "id": "18",
           "tradingName": "SOS Cerveja",
           "ownerName": "Daniel Henrique",
           "document": "15.127.213/0001-56",
@@ -2289,7 +2144,6 @@
           }
        },
        {
-          "id": "19",
           "tradingName": "Noiz Cerveja",
           "ownerName": "Eduardo Pedroso",
           "document": "15.187.572/0001-07",
@@ -2359,7 +2213,6 @@
           }
        },
        {
-          "id": "20",
           "tradingName": "Ze Repoe",
           "ownerName": "Eduardo Pipoca",
           "document": "15.562.297/0001-56",
@@ -2545,7 +2398,6 @@
           }
        },
        {
-          "id": "21",
           "tradingName": "Adega Osasco",
           "ownerName": "Pele Maradona",
           "document": "16.572.053/0001-17",
@@ -2839,7 +2691,6 @@
           }
        },
        {
-          "id": "22",
           "tradingName": "Adega Pinheiros",
           "ownerName": "Joao Maradona",
           "document": "18.293.334/0001-66",
@@ -2941,7 +2792,6 @@
           }
        },
        {
-          "id": "23",
           "tradingName": "Adega Sao Paulo",
           "ownerName": "Pele da Silva",
           "document": "19.024.189/0001-80",
@@ -3087,7 +2937,6 @@
           }
        },
        {
-          "id": "24",
           "tradingName": "Bar do Ze",
           "ownerName": "Daniboy",
           "document": "19.280.240/0001-15",
@@ -3217,7 +3066,6 @@
           }
        },
        {
-          "id": "25",
           "tradingName": "Bar Legal",
           "ownerName": "Daniel Henrique",
           "document": "20.053.623/0001-30",
@@ -3403,7 +3251,6 @@
           }
        },
        {
-          "id": "26",
           "tradingName": "Bar Nem Tanto",
           "ownerName": "Daniboy",
           "document": "20.194.088/0001-37",
@@ -3617,7 +3464,6 @@
           }
        },
        {
-          "id": "27",
           "tradingName": "Mercado Pinheiros",
           "ownerName": "Daniel Henrique",
           "document": "21.579.095/0001-10",
@@ -3723,7 +3569,6 @@
           }
        },
        {
-          "id": "28",
           "tradingName": "Adega Ambev",
           "ownerName": "Eduardo Pedroso",
           "document": "21.658.641/0001-08",
@@ -3829,7 +3674,6 @@
           }
        },
        {
-          "id": "29",
           "tradingName": "Ze da Ambev",
           "ownerName": "Eduardo Pipoca",
           "document": "22.15.127.213/0001-56.752/0001-90",
@@ -3935,7 +3779,6 @@
           }
        },
        {
-          "id": "30",
           "tradingName": "Emporio legal",
           "ownerName": "Ze da Ambev",
           "document": "22512343000178",
@@ -3993,7 +3836,6 @@
           }
        },
        {
-          "id": "31",
           "tradingName": "Emporio Pinheiros",
           "ownerName": "Ze da Ambev",
           "document": "22745914/0001-14",
@@ -4071,7 +3913,6 @@
           }
        },
        {
-          "id": "32",
           "tradingName": "Adega Emporio",
           "ownerName": "Ze da Silva",
           "document": "23.254.882/0001-17",
@@ -4169,7 +4010,6 @@
           }
        },
        {
-          "id": "33",
           "tradingName": "Adega do Joao",
           "ownerName": "Pedro Silva",
           "document": "23.459.215/0001-70",
@@ -4407,7 +4247,6 @@
           }
        },
        {
-          "id": "34",
           "tradingName": "Joao do Emporio",
           "ownerName": "Joao Silva",
           "document": "23.680.471/0001-93",
@@ -4505,7 +4344,6 @@
           }
        },
        {
-          "id": "35",
           "tradingName": "Emporio da Cerveja",
           "ownerName": "Fernando Silva",
           "document": "23.934.782/0001-31",
@@ -4611,7 +4449,6 @@
           }
        },
        {
-          "id": "36",
           "tradingName": "Ze Delivery",
           "ownerName": "Lucas Satto",
           "document": "23840372000121",
@@ -4717,7 +4554,6 @@
           }
        },
        {
-          "id": "37",
           "tradingName": "Behoppy",
           "ownerName": "Luiz Santo",
           "document": "24.522.169/0001-70",
@@ -4767,7 +4603,6 @@
           }
        },
        {
-          "id": "38",
           "tradingName": "SOS Cerveja",
           "ownerName": "Felipe Rudenberg",
           "document": "24302190/0001-60",
@@ -4849,7 +4684,6 @@
           }
        },
        {
-          "id": "39",
           "tradingName": "Noiz Cerveja",
           "ownerName": "Ze Legal",
           "document": "25.039.008/0001-92",
@@ -5023,7 +4857,6 @@
           }
        },
        {
-          "id": "40",
           "tradingName": "Ze Repoe",
           "ownerName": "Leonardo Cruz",
           "document": "25.175.276/0001-31",
@@ -5173,7 +5006,6 @@
           }
        },
        {
-          "id": "41",
           "tradingName": "Adega Sao Paulo",
           "ownerName": "Rai da Silva",
           "document": "26.091.851/0001-80",
@@ -5267,7 +5099,6 @@
           }
        },
        {
-          "id": "42",
           "tradingName": "Bar do Ze",
           "ownerName": "Ronaldinho gaucho",
           "document": "26.617.478/0001-59",
@@ -5353,7 +5184,6 @@
           }
        },
        {
-          "id": "43",
           "tradingName": "Bar Legal",
           "ownerName": "Messi Pele",
           "document": "26.810.612/0001-33",
@@ -5551,7 +5381,6 @@
           }
        },
        {
-          "id": "44",
           "tradingName": "Bar Nem Tanto",
           "ownerName": "Pele Maradona",
           "document": "27494912000113",
@@ -5613,7 +5442,6 @@
           }
        },
        {
-          "id": "45",
           "tradingName": "Mercado Pinheiros",
           "ownerName": "Joao Maradona",
           "document": "27865490000145",
@@ -5711,7 +5539,6 @@
           }
        },
        {
-          "id": "46",
           "tradingName": "Adega Ambev",
           "ownerName": "Pele da Silva",
           "document": "36211693850",
@@ -5949,7 +5776,6 @@
           }
        },
        {
-          "id": "47",
           "tradingName": "Ze da Ambev",
           "ownerName": "Daniboy",
           "document": "54321515000112",
@@ -6211,7 +6037,6 @@
           }
        },
        {
-          "id": "48",
           "tradingName": "Bar do Ze",
           "ownerName": "Daniel Henrique",
           "document": "62638527000101",
@@ -6437,7 +6262,6 @@
           }
        },
        {
-          "id": "49",
           "tradingName": "Bar Legal",
           "ownerName": "Eduardo Pedroso",
           "document": "73.068.991/0001-18",
@@ -6571,7 +6395,6 @@
           }
        },
        {
-          "id": "50",
           "tradingName": "Adega Emporio",
           "ownerName": "Eduardo Pipoca",
           "document": "82.666.231/0001-01",
@@ -6613,7 +6436,6 @@
           }
        },
        {
-          "id": "51",
           "tradingName": "Adega do Joao",
           "ownerName": "Pele Maradona",
           "document": "960361.506-44",

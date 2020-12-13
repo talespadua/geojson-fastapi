@@ -11,7 +11,9 @@ class PartnerRepository(BasePartnerRepository):
         self.connection = connection
 
     def insert_partner(self, partner: PartnerModel) -> Any:
-        return self.connection.database.partners.insert_one(partner.dict())
+        return self.connection.database.partners.insert_one(
+            partner.dict(by_alias=True, exclude={"id"})
+        )
 
     def get_partner_by_id(self, partner_id: str) -> Optional[PartnerModel]:
         partner = self.connection.database.partners.find_one(
@@ -25,14 +27,14 @@ class PartnerRepository(BasePartnerRepository):
     def get_partners_by_point_intersection(
         self, long: float, lat: float
     ) -> List[PartnerModel]:
-        # { geometry: { $geoIntersects: { $geometry: { type: "Point", coordinates: [ -73.93414657, 40.82302903 ] } } } }
-        # partners_all = self.connection.database.partners.find({})
-        # all_partners = [d for d in partners_all]
-        partners = self.connection.database.partners.find(
+        partners = self.connection.database["partners"].find(
             {
                 "coverageArea": {
                     "$geoIntersects": {
-                        "$geometry": {"type": "Point", "coordinates": [long, lat]}
+                        "$geometry": {
+                            "type": "Point",
+                            "coordinates": [long, lat]
+                        }
                     }
                 }
             }
