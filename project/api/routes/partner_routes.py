@@ -30,7 +30,15 @@ def get_partner_by_id(partner_id: str) -> PartnerModel:
     return partner
 
 
-@router.post("/", status_code=201)
+@router.post(
+    "/",
+    status_code=201,
+    responses={
+        409: {
+            "description": "there is a partner with the provided document"
+        }
+    }
+)
 def insert_partner(partner: PartnerModel) -> str:
     try:
         partner_id = partner_service.insert_partner(partner)
