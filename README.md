@@ -15,17 +15,17 @@ You can shutdown the server using
 
 ## How to test it:
 
-###After raising the infrastructure, you can run the test using:
+### After raising the infrastructure, you can run the test using:
   
 `make test`
 
-###To run specific tests:
+### To run specific tests:
 
 `make test-single test=<test_path>`
 
 where `<test_path>` is the path for the test, module or folder you want to test
 
-###To run all QA Pipeline, with linter and type checking:
+### To run all QA Pipeline, with linter and type checking:
 
 `make pipeline/qa`
 
